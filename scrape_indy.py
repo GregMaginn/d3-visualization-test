@@ -30,24 +30,20 @@ def scraper():
     for rowNum in range(len(bodyRows)):
         columnArray = bodyRows[rowNum].find_all('td')
         x = 0
-        #for colNum in columnArray:
+        print(f'Finishing Position: {columnArray[0].text}')
+        print(f'Qualifying Position: {columnArray[1].text}')
+        print(f'Car Number: {columnArray[2].text}')
+        print(f'Driver Name: {columnArray[3].text}')
+        #need to split string on ()
+        print(f'Sponsor/Owner: {columnArray[4].text}')
+        #need number between C/ and /F to find engine maker
+        print(f'Engine: {columnArray[5].text}')
+        print(f'Laps Completed: {columnArray[6].text}')
+        print(f'Laps Lead: {columnArray[8].text}')
+        print(f'Points Awarded: {columnArray[9].text}')
+        print('=======================')
+
+        #while x < len(columnArray):
          #   print(columnArray[x].text)
           #  x =x+1
-
-        while x < len(columnArray):
-            print(columnArray[x].text)
-            x =x+1
-        #for result in bodyRows:
-         #   print(f'Finishing Position: {result.text[0]}')
-          #  print(f'Qualifying Position: {result.text[1]}')
-           # print(f'Car Number: {result.text[2]}')
-            #print(f'Driver Name: {result.text[3]}')
-            #need to split string on ()
-            #print(f'Sponsor/Owner: {result.text[4]}')
-            #need number between C/ and /F to find engine maker
-            #print(f'Engine: {result.text[5]}')
-            #print(f'Laps Completed: {result.text[6]}')
-            #print(f'Laps Lead: {result.text[8]}')
-            #print(f'Points Awarded: {result.text[9]}')
-            #print('=======================')
 scraper()
