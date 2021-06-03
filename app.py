@@ -6,7 +6,7 @@ import pymongo
 
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
-from scrape_indy import scrapper
+from scrape_indy import scraper
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ def home():
 @app.route('/scrape')
 def scrape():
     indy_mongo = mongo.db.indy_mongo
-    indy_info = scrapper()
+    indy_info = scraper()
     indy_mongo.update({}, indy_info, upsert=True)
 
 if __name__ == "__main__":
